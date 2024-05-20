@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>记账网页</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>我的账本</h1>
+    <form id="record-form">
+      <input type="number" id="amount" placeholder="金额" required>
+      <input type="text" id="details" placeholder="详细信息" autocomplete="off">
+    </form>
+    <div id="statistics-actions">
+      <p id="income">当月收入: 0</p>
+      <p id="expense">当月支出: 0</p>
+      <a href="#" id="backup-restore" class="link-button">备份与恢复</a>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>时间</th>
+          <th>金额</th>
+          <th>详细信息</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody id="records-table-body"></tbody>
+    </table>
+    <div id="dialog" class="dialog">
+      <div class="dialog-content">
+        <span class="close-button">&times;</span>
+        <h2>备份与恢复</h2>
+        <button id="export-csv">导出为CSV</button>
+        <input type="file" id="import-csv" accept=".csv">
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
